@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContactsListComponent implements OnInit {
 
 
-  contacts = {};
+  contacts = [];
 
   constructor() {
     this.contacts = [      {
@@ -25,9 +25,19 @@ export class ContactsListComponent implements OnInit {
       firstName: 'Martin',
       lastName:  'Hess',
       email:     'martin@example.com'
+    },
+    {
+      firstName: 'Martin',
+      lastName:  'House',
+      email:     'martin@example.com'
     }
   ];
 
+   }
+   removeContact(contact){
+     let index = this.contacts.indexOf(contact);
+     this.contacts.splice(index, 1);
+     //console.log(contact);
    }
 
   ngOnInit() {
